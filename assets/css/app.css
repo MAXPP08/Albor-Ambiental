@@ -1,26 +1,29 @@
-/* google fonts */
+/* Importa la fuente desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
-/* Helpers y Reset */
+/* Variables CSS y Reset */
 :root {
-    --c--brand: #fac562;
-    --c-dark: #333;
-    --c-body: #666;
-    --c-light: #f8f8f8;
-    --f-base: "Plus Jakarta Sans", sans-serif;
-    --n-height: 100px;
+    --c--brand: #fac562; /* Color de la marca */
+    --c-dark: #333; /* Color oscuro */
+    --c-body: #666; /* Color del cuerpo del texto */
+    --c-light: #f8f8f8; /* Color claro */
+    --f-base: "Plus Jakarta Sans", sans-serif; /* Fuente base */
+    --n-height: 100px; /* Altura de la barra de navegación */
 }
 
+/* Reset de estilos para todos los elementos */
 *, *::after, *::before {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* Comportamiento de desplazamiento suave */
 html {
     scroll-behavior: smooth;
 }
 
+/* Estilos base para el cuerpo */
 body {
     color: var(--c-body);
     font-family: var(--f-base);
@@ -28,6 +31,7 @@ body {
     font-weight: 400;
 }
 
+/* Estilos para encabezados */
 h1, h2, h3, h4, h5, h6 {
     color: var(--c-dark);
     line-height: 1.2;
@@ -35,6 +39,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
 
+/* Clases para diferentes tamaños de encabezados */
 .heading-xl {
     font-size: clamp(44px, 10vw, 100px);
     text-transform: uppercase;
@@ -52,6 +57,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 20px;
 }
 
+/* Estilos para enlaces */
 a {
     color: var(--c--brand);
     text-decoration: none;
@@ -62,20 +68,24 @@ a:hover {
     color: var(--c--brand);
 }
 
+/* Estilos para imágenes */
 img {
     max-width: 100%;
     width: 100%;
     height: auto;
 }
 
+/* Estilos para listas */
 ul {
     list-style: none;
 }
 
+/* Estilos para secciones */
 section {
     padding: 140px 0;
 }
 
+/* Contenedor principal */
 .container {
     max-width: 1140px;
     width: 100%;
@@ -83,6 +93,7 @@ section {
     padding: 0 24px;
 }
 
+/* Estilos para botones */
 .btn {
     display: inline-block;
     background-color: transparent;
@@ -161,6 +172,7 @@ section {
     transition: all 0.4s ease;
 }
 
+/* Transformaciones de la barra del menú hamburguesa cuando está activa */
 .hamburger.active span:nth-child(1) {
     transform: translateY(5px) rotate(45deg);
 }
@@ -186,6 +198,8 @@ section {
     color: var(--c--brand);
 }
 
+
+/* Estilos para la navbar en pantallas pequeñas */
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
@@ -228,12 +242,48 @@ section {
     position: relative;
 }
 
+/* Estilos para el título en la sección hero */
 #hero h1 {
     color: white;
     position: relative;
     z-index: 2;
 }
 
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Negro transparente */
+    z-index: 1; /* Asegura que el filtro esté sobre la imagen pero debajo del texto */
+}
+
+#hero h1 {
+    color: white;
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté sobre el filtro */
+}
+
+/* Botón de scroll hacia abajo */
+.scroll-to-down {
+    width: 30px;
+    height: 60px;
+    display: grid;
+    place-content: center;
+    font-size: 24px;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* Animación para el botón de scroll hacia abajo */
 @keyframes scrolltodown {
     0%, 100% {
         transform: translateY(30%);
@@ -276,14 +326,17 @@ section {
     gap: 44px;
 }
 
+/* Configuración para una grid de dos columnas */
 .two-col-grid {
     grid-template-columns: repeat(2, 1fr);
 }
 
+/* Configuración para una grid de tres columnas */
 .three-col-grid {
     grid-template-columns: repeat(3, 1fr);
 }
 
+/* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
     .grid {
         gap: 24px;
@@ -299,10 +352,12 @@ section {
     gap: 0;
 }
 
+/* Estilos alternos para servicios */
 .service:nth-child(odd) {
     background-color: var(--c-light);
 }
 
+/* Estilos generales para cada servicio */
 .service {
     padding: 44px;
 }
@@ -311,6 +366,7 @@ section {
     font-size: 14px;
 }
 
+/* Estilos para el ícono de servicio */
 .service .icon {
     font-size: 38px;
     color: var(--c--brand);
@@ -336,7 +392,6 @@ section {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    /*padding: 44px;*/
     padding: 20px; /* Ajuste del padding en overlay */
     display: flex;
     align-items: flex-end;
@@ -431,7 +486,7 @@ footer .social-icons a:not(:last-child) {
 }
 
 .logo {
-    width: 110px;
+    width: 140px;
     height: auto;
     margin-right: 10px;
     vertical-align: middle;
@@ -504,45 +559,25 @@ footer .social-icons a:not(:last-child) {
 
 /* Project Title */
 .project-title-container {
-    /*min-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;*/
     min-height: auto; /* Ajuste para mejorar la visualización en pantallas pequeñas */
     padding: 10px; /* Ajuste del padding */
 }
 
 .project-title {
-    /*padding: 20px;
-    text-align: center;*/
     padding: 10px; /* Ajuste del padding */
 }
 
 .project-title h1 {
-    /*font-size: 2em;
-    margin-bottom: 10px;*/
     font-size: 1em; /* Ajuste del tamaño de fuente */
 }
 
 .project-title p {
-    /*font-size: 1em;
-    line-height: 1.5;*/
     font-size: 0.9em; /* Ajuste del tamaño de fuente */
     line-height: 1.4; /* Ajuste del interlineado */
 }
 
 @media (max-width: 768px) {
-    /*.project {
-        padding: 24px;
-    }
-    .project .title {
-        font-size: 18px;
-    }
-    .project .description {
-        font-size: 13px;
-    }*/
-
-    .project {
+        .project {
         padding: 16px; /* Ajuste del padding */
     }
     
@@ -565,16 +600,6 @@ footer .social-icons a:not(:last-child) {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 /* Ajustes para mejorar la visualización en dispositivos móviles */
 @media (max-width: 768px) {
     .project .overlay {
@@ -592,3 +617,9 @@ footer .social-icons a:not(:last-child) {
         line-height: 1.4;
     }
 }
+
+
+
+
+
+
