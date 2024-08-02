@@ -198,12 +198,11 @@
         <!-- Contact -->
         <section id="contact">
             <div class="container contact-container">
-                <div class="contact-info">
+                 <!--<div class="contact-info">
                     <h2>Información de Contacto</h2>
                     <ul>
                         <li><strong>Email</strong></li>
                         <li>alborambiental@gmail.com</li>
-                        <!--<li>otrocorreo@example.com</li>-->
                     </ul>
                     <ul>
                         <li><strong>Teléfono</strong></li>
@@ -215,16 +214,24 @@
                         <li>Calle Higuerilla s/n, Monte del Toro, CP 71502,</li>
                         <li>H. C. Ejutla de Crespo</li>
                     </ul>
-                </div>
+                </div> -->
                 <div class="contact-form">
-                    <h2>Escríbanos</h2>
+                    <h2>Envíenos un mensaje</h2>
                     <form action="https://formspree.io/f/mdkngnyl" method="POST">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required>
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <!--<label for="name">Nombre:</label>-->
+                        <input type="text" placeholder="Escribe tu nombre" id="name" name="name" required>
+
+                        <!--<label for="email">Email:</label>-->
+                        <input type="email" placeholder="Escribe tu email" id="email" name="email" required>
+
+                        <!--<label for="phone">Teléfono:</label>-->
+                        <input type="tel" placeholder="Escribe tu número de teléfono" id="phone" name="phone" required>
+
+                        <!--<label for="company">Nombre de la Empresa:</label>-->
+                        <input type="text" placeholder="Nombre de la empresa (Opcional)" id="company" name="company">
+
+                        <!--<label for="message">Mensaje:</label>-->
+                        <textarea id="message" placeholder="Escribe aquí tu Mensaje" name="message" rows="7" required></textarea>
                         <button type="submit">Enviar Mensaje</button>
                     </form>
                 </div>
@@ -247,7 +254,7 @@
     </footer>
 
     <script defer src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script defer src="./assets/js/app.js"></script>
+     <script defer src="./assets/js/app.js"></script>
 </body>
 
 </html>
